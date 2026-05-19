@@ -3,36 +3,42 @@ import {Link} from "react-router-dom";
 import './Header.css'
 
 const Header = () => {
-    return (
-        
-        // !!!!!!МБ, ИЗМЕНИТЬ КОД!!!!!!!!!!
-
+    return (      
         <header className="header">
-            <nav className="header_nav">
-                <ul className="header_nav-list">
+            <a href="/" className="logo">
+                <span className="red">X</span>
+                <span className="white">X</span>
+            </a>                
+            <nav>
+                <ul>
                     <li className="header_nav-link">
                         <Link
-                            to="/"
+                            to="/main_page"
                             className="header_nav-link-item"
                         >
-                           Kuplinov
-                           CHANGE STRUCTURE
+                            ГЛАВНАЯ
                         </Link>
                     </li>
                     <li className="header_nav-link">
                         <Link
-                            to="/about"
+                            to="/myths"
                             className="header_nav-link-item"
                         >
-                            TrueCrime
+                            МИФЫ                           
                         </Link>
                     </li>
-                                        <li className="header_nav-link">
+                    <li className="header_nav-link">
                         <Link
-                            to="/contacts"
-                            className="header_nav-link-item"
-                        >
-                            Sth else
+                            to="/true_crime"
+                            className="header_nav-link-item">
+                                ТРУ КРАЙМ
+                        </Link>
+                    </li>
+                    <li className="header_nav-link">
+                        <Link
+                            to="/kuplinov"
+                            className="header_nav-link-item">
+                                КУПЛИНОВ
                         </Link>
                     </li>
                 </ul>
