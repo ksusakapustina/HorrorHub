@@ -1,0 +1,38 @@
+/*
+Я поставила паддинги и марджины на своё усмотрение,
+но вы лучше посмотрите, как лучше смотрится, и, если что, замените их
+*/
+.header-fixed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1, h5 {
+    // !!!Уменьшить отступ между абзацами!!!
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    color: whitesmoke;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 0px;
+}
