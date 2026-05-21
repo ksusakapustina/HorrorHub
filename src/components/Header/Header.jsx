@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+// import HeaderScroll from '../../assets/images/HeaderScroll.png'
+
 import "./Header.scss";
 
 const Header = () => {
@@ -34,7 +36,10 @@ const Header = () => {
                     </ul>
                 </nav>
             </div>
-            <div className="header-scrollable">
+            <div
+                className="header-scrollable"
+                // style={{backgroundImage: `url(${HeaderScroll})`}}
+            >
                 <h1>ХОРРОР-ХАБ</h1>
                 <h3>Твой портал в мир ужасов</h3>
             </div>
