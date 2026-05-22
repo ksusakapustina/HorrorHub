@@ -2,24 +2,27 @@
 Я поставила паддинги и марджины на своё усмотрение,
 но вы лучше посмотрите, как лучше смотрится, и, если что, замените их
 */
+
 .header-fixed {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px 20px;
+    padding: 20px 50px;
 }
 
 .logo {
     margin-right: auto;
-}
+    font-size: 28px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-.red {
+    .red {
     color: #ff0000;
-}
+    }
 
-.white {
-    color: white;
+    .white {
+        color: white;
+    }
 }
 
 nav ul {
@@ -34,6 +37,13 @@ nav ul {
 .header_nav-link-item {
     color: white;
     text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: color 0.3s ease;
+
+    // Это я про это, если что говорила. Меняет цвет при наведении
+    &:hover {
+        color: #ff0000;
+    }
 }
 
 .header-scrollable {
@@ -51,7 +61,7 @@ nav ul {
 
     
     h1, h3 {
-    // !!!Уменьшить отступ между абзацами!!!
+    // !!!Уменьшить отступ между абзацами!!! P.S. Вроде уже не актуально, но всё куда-то вверх улетело 
     display: flex;
     justify-content: center;
     margin: 0;
@@ -62,5 +72,238 @@ nav ul {
 
     h1 {
         margin-bottom: 0px;
+    }
+}
+
+// АДАПТИВНОСТЬ
+// Ноуты
+@media (max-width: 1280px) {
+    .header-fixed {
+        padding: 20px 40px;
+
+    }
+    .logo {
+        font-size: 26px;
+    }
+
+    nav ul {
+        gap: 25px;
+    }
+    
+    .header-scrollable {
+        min-height: 450px;
+        max-height: 280px;
+        
+        h1 {
+            font-size: 42px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+    }
+}
+
+// Tablets
+@media (max-width: 1024px) {
+    .header-fixed {
+        padding: 15px 30px;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+    
+    nav ul {
+        gap: 20px;
+    }
+    
+    .header_nav-link-item {
+        font-size: 16px;
+    }
+    
+    .header-scrollable {
+        min-height: 400px;
+        max-height: 260px;
+        
+        h1 {
+            font-size: 36px;
+        }
+        
+        h3 {
+            font-size: 18px;
+        }
+    }
+}
+
+// More tablets
+@media (max-width: 768px) {
+    .header-fixed {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    
+    .logo {
+        margin-right: 0;
+        font-size: 22px;
+    }
+    
+    nav ul {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .header_nav-link-item {
+        font-size: 15px;
+    }
+    
+    .header-scrollable {
+        min-height: 350px;
+        max-height: 240px;
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        
+        h3 {
+            font-size: 16px;
+        }
+    }
+}
+
+// Phones
+@media (max-width: 600px) {
+    .header-fixed {
+        padding: 12px 15px;
+        gap: 12px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    nav ul {
+        gap: 15px;
+    }
+    
+    .header_nav-link-item {
+        font-size: 14px;
+    }
+    
+    .header-scrollable {
+        min-height: 300px;
+        max-height: 220px;
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+        
+        h3 {
+            font-size: 14px;
+        }
+    }
+}
+
+// Other phones
+@media (max-width: 480px) {
+    .header-fixed {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+    
+    .logo {
+        font-size: 18px;
+    }
+    
+    nav ul {
+        gap: 12px;
+    }
+    
+    .header_nav-link-item {
+        font-size: 12px;
+    }
+    
+    .header-scrollable {
+        min-height: 250px;
+        max-height: 200px;
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 12px;
+        }
+    }
+}
+
+// And more phones
+@media (max-width: 360px) {
+    .header-fixed {
+        padding: 8px 10px;
+    }
+    
+    .logo {
+        font-size: 16px;
+    }
+    
+    nav ul {
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .header_nav-link-item {
+        font-size: 14px;
+    }
+    
+    .header-scrollable {
+        min-height: 220px;
+        max-height: 180px;
+        
+        h1 {
+            font-size: 20px;
+        }
+        
+        h3 {
+            font-size: 11px;
+        }
+    }
+}
+
+// Big screens
+@media (min-width: 1440px) {
+    .header-fixed {
+        padding: 25px 80px;
+    }
+    
+    .logo {
+        font-size: 32px;
+    }
+    
+    nav ul {
+        gap: 40px;
+    }
+    
+    .header_nav-link-item {
+        font-size: 18px;
+    }
+    
+    .header-scrollable {
+        min-height: 600px;
+        max-height: 350px;
+        
+        h1 {
+            font-size: 56px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 24px;
+        }
     }
 }

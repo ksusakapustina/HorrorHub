@@ -13,7 +13,7 @@ function App() {
   return ( 
       <Router>
         <div className='app'>
-          <Header />
+          <Header />          
           <Routes>
             <Route path='/' element={<MainPage />} />
             <Route path='/main_page' element={<MainPage />} />
@@ -21,7 +21,7 @@ function App() {
             <Route path='/true_crime' element={<TrueCrime />} />
             <Route path='/kuplinov' element={<Kuplinov />} />
           </Routes>
-
+          <Footer />
         </div>            
       </Router>
   )
