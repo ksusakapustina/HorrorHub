@@ -2,6 +2,9 @@
 Я поставила паддинги и марджины на своё усмотрение,
 но вы лучше посмотрите, как лучше смотрится, и, если что, замените их
 */
+.header {
+    height: 100dvh;
+}
 
 .header-fixed {
     display: flex;
@@ -9,6 +12,7 @@
     align-items: center;
     width: 100%;
     padding: 20px 50px;
+    position: fixed;
 }
 
 .logo {
@@ -47,17 +51,21 @@ nav ul {
 }
 
 .header-scrollable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100dvh - 70px);
 
     background-image: url('../../assets/images/HeaderScroll.png');
     background-size: cover;
     background-position: center;
     background-attachment: local;
+    
 
-    min-height: 500px;
     width: 100%;
 
-    overflow-y: auto;
-    max-height: 300px;
+    overflow-y: auto;    
 
     
     h1, h3 {
@@ -68,6 +76,7 @@ nav ul {
     padding: 0;
     color: whitesmoke;
     text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
     }
 
     h1 {
@@ -90,10 +99,7 @@ nav ul {
         gap: 25px;
     }
     
-    .header-scrollable {
-        min-height: 450px;
-        max-height: 280px;
-        
+    .header-scrollable {    
         h1 {
             font-size: 42px;
         }
@@ -122,9 +128,7 @@ nav ul {
     }
     
     .header-scrollable {
-        min-height: 400px;
-        max-height: 260px;
-        
+       
         h1 {
             font-size: 36px;
         }
@@ -159,8 +163,6 @@ nav ul {
     }
     
     .header-scrollable {
-        min-height: 350px;
-        max-height: 240px;
         
         h1 {
             font-size: 32px;
@@ -193,8 +195,6 @@ nav ul {
     }
     
     .header-scrollable {
-        min-height: 300px;
-        max-height: 220px;
         
         h1 {
             font-size: 28px;
@@ -227,8 +227,6 @@ nav ul {
     }
     
     .header-scrollable {
-        min-height: 250px;
-        max-height: 200px;
         
         h1 {
             font-size: 24px;
@@ -262,8 +260,6 @@ nav ul {
     }
     
     .header-scrollable {
-        min-height: 220px;
-        max-height: 180px;
         
         h1 {
             font-size: 20px;
@@ -294,8 +290,6 @@ nav ul {
     }
     
     .header-scrollable {
-        min-height: 600px;
-        max-height: 350px;
         
         h1 {
             font-size: 56px;
