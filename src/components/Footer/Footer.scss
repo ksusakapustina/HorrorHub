@@ -1,44 +1,22 @@
 .footer {
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 1.45rem 1rem 2rem;
+    border-top: 1px solid var(--horror-accent);
+    background: var(--horror-bg);
 }
 
-// АДАПТИВНОСТЬ
-
-// @media (max-width: 1280px) {
-
-// }
-
-// Tablets
-// @media (max-width: 1024px) {
-
-// }
-
-// More tablets
-@media (max-width: 768px) {
-    .footer {
-        padding: 18px 25px;
-    }
-        
-    p {
-            font-size: 14px;
-    }     
+.footer-info {
+    width: min(100%, 92rem);
+    margin: 0 auto;
+    color: rgba(194, 194, 194, 0.9);
+    font-family: var(--horror-font-ui);
+    font-size: clamp(0.95rem, 1.2vw, 1.4rem);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
 }
 
-// Phones
-// @media (max-width: 600px) {
-
-// }
-
-// Big screens
-@media (min-width: 1440px) {
+@media (min-width: 1280px) {
     .footer {
-        padding: 25px 50px;
+        padding-inline: 1.5rem;
     }
-        
-    p {
-        font-size: 18px;
-    } 
 }

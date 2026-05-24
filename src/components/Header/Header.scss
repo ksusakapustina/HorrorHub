@@ -1,52 +1,72 @@
-/*
-Я поставила паддинги и марджины на своё усмотрение,
-но вы лучше посмотрите, как лучше смотрится, и, если что, замените их
-*/
 .header {
-    height: 100dvh;
+    min-height: 100svh;
+    background: var(--horror-bg);
 }
 
 .header-fixed {
+    position: sticky;
+    top: 0;
+    z-index: 20;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 20px 50px;
-    position: fixed;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    border-top: 2px solid var(--horror-accent);
+    border-bottom: 1px solid var(--horror-accent);
+    background: var(--horror-bg);
 }
 
 .logo {
-    margin-right: auto;
-    font-size: 28px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.08em;
+    flex: 0 0 auto;
+    font-family: var(--horror-font-display);
+    font-weight: 700;
+    font-size: clamp(2.1rem, 8vw, 3.2rem);
+    line-height: 1;
+    text-decoration: none;
+    text-shadow: 0 0 9px rgba(255, 255, 255, 0.28);
 
     .red {
-    color: #ff0000;
+        color: #ff141b;
+        text-shadow: 0 0 10px rgba(255, 20, 27, 0.45);
     }
 
     .white {
-        color: white;
+        color: #ffffff;
     }
 }
 
-nav ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.header-nav {
+    flex: 1 1 auto;
 }
 
+.header-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem 1.2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
 .header_nav-link-item {
-    color: white;
+    color: rgba(244, 244, 244, 0.76);
+    font-family: var(--horror-font-ui);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0;
     text-decoration: none;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
 
-    // Это я про это, если что говорила. Меняет цвет при наведении
-    &:hover {
-        color: #ff0000;
+    &:hover,
+    &:focus-visible,
+    &.is-active {
+        color: #ffffff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.28);
     }
 }
 
@@ -54,250 +74,68 @@ nav ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    height: calc(100dvh - 70px);
+    min-height: clamp(18rem, 35vw, 32.5rem);
+    padding: 2rem 1rem;
+    border-bottom: 1px solid var(--horror-accent);
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.28)),
+        url("../../assets/images/HeaderScroll.png") center / cover no-repeat;
+}
 
-    background-image: url('../../assets/images/HeaderScroll.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: local;
-    
-
-    width: 100%;
-
-    overflow-y: auto;    
-
-    
-    h1, h3 {
-    // !!!Уменьшить отступ между абзацами!!! P.S. Вроде уже не актуально, но всё куда-то вверх улетело 
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    color: whitesmoke;
+.header-copy {
+    display: grid;
+    justify-items: center;
+    gap: 0.35rem;
     text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
-    }
-
-    h1 {
-        margin-bottom: 0px;
-    }
 }
 
-// АДАПТИВНОСТЬ
-// Ноуты
-@media (max-width: 1280px) {
-    .header-fixed {
-        padding: 20px 40px;
-
-    }
-    .logo {
-        font-size: 26px;
-    }
-
-    nav ul {
-        gap: 25px;
-    }
-    
-    .header-scrollable {    
-        h1 {
-            font-size: 42px;
-        }
-        h3 {
-            font-size: 20px;
-        }
-    }
+.header-copy h1,
+.header-copy h3 {
+    margin: 0;
+    letter-spacing: 0;
 }
 
-// Tablets
-@media (max-width: 1024px) {
-    .header-fixed {
-        padding: 15px 30px;
-    }
-    
-    .logo {
-        font-size: 24px;
-    }
-    
-    nav ul {
-        gap: 20px;
-    }
-    
-    .header_nav-link-item {
-        font-size: 16px;
-    }
-    
-    .header-scrollable {
-       
-        h1 {
-            font-size: 36px;
-        }
-        
-        h3 {
-            font-size: 18px;
-        }
-    }
+.header-copy .horror-logo-title {
+    line-height: 0.92;
 }
 
-// More tablets
-@media (max-width: 768px) {
+.header-subtitle {
+    --horror-body-text-size: clamp(1rem, 2.4vw, 1.95rem);
+    color: rgba(218, 218, 218, 0.92);
+    line-height: 1.2;
+}
+
+@media (max-width: 639px) {
     .header-fixed {
         flex-direction: column;
-        padding: 15px 20px;
-        gap: 15px;
+        align-items: flex-start;
     }
-    
-    .logo {
-        margin-right: 0;
-        font-size: 22px;
+
+    .header-nav {
+        width: 100%;
     }
-    
-    nav ul {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .header_nav-link-item {
-        font-size: 15px;
-    }
-    
-    .header-scrollable {
-        
-        h1 {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
-        
-        h3 {
-            font-size: 16px;
-        }
+
+    .header-nav ul {
+        justify-content: flex-start;
     }
 }
 
-// Phones
-@media (max-width: 600px) {
+@media (min-width: 768px) {
     .header-fixed {
-        padding: 12px 15px;
-        gap: 12px;
+        padding: 0.95rem 1.6rem;
     }
-    
-    .logo {
-        font-size: 20px;
-    }
-    
-    nav ul {
-        gap: 15px;
-    }
-    
+
     .header_nav-link-item {
-        font-size: 14px;
+        font-size: 0.95rem;
     }
-    
+
     .header-scrollable {
-        
-        h1 {
-            font-size: 28px;
-            margin-bottom: 6px;
-        }
-        
-        h3 {
-            font-size: 14px;
-        }
+        padding-inline: 2rem;
     }
 }
 
-// Other phones
-@media (max-width: 480px) {
+@media (min-width: 1200px) {
     .header-fixed {
-        padding: 10px 12px;
-        gap: 10px;
-    }
-    
-    .logo {
-        font-size: 18px;
-    }
-    
-    nav ul {
-        gap: 12px;
-    }
-    
-    .header_nav-link-item {
-        font-size: 12px;
-    }
-    
-    .header-scrollable {
-        
-        h1 {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-        
-        h3 {
-            font-size: 12px;
-        }
-    }
-}
-
-// And more phones
-@media (max-width: 360px) {
-    .header-fixed {
-        padding: 8px 10px;
-    }
-    
-    .logo {
-        font-size: 16px;
-    }
-    
-    nav ul {
-        gap: 10px;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .header_nav-link-item {
-        font-size: 14px;
-    }
-    
-    .header-scrollable {
-        
-        h1 {
-            font-size: 20px;
-        }
-        
-        h3 {
-            font-size: 11px;
-        }
-    }
-}
-
-// Big screens
-@media (min-width: 1440px) {
-    .header-fixed {
-        padding: 25px 80px;
-    }
-    
-    .logo {
-        font-size: 32px;
-    }
-    
-    nav ul {
-        gap: 40px;
-    }
-    
-    .header_nav-link-item {
-        font-size: 18px;
-    }
-    
-    .header-scrollable {
-        
-        h1 {
-            font-size: 56px;
-            margin-bottom: 15px;
-        }
-        
-        h3 {
-            font-size: 24px;
-        }
+        padding-inline: 1.2rem 2rem;
     }
 }
