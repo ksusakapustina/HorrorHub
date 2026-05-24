@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import mythsImg from "../../assets/images/myths.jpg";
 import trueCrimeImg from "../../assets/images/truecrime.jpg";
@@ -33,37 +34,57 @@ const sections = [
 ];
 
 const MainPage = () => {
+    useEffect(() => {
+        window.dispatchEvent(new Event("horrorhub:dynamic-sections-ready"));
+    }, []);
+
     return (
         <main>
             <div className="mainpage">
-                <section className="mainpage-intro">
+                <section
+                    className="mainpage-intro"
+                    data-dynamic-header-section="true"
+                    data-title="ДОБРО ПОЖАЛОВАТЬ В БЕЗДНУ"
+                    data-subtitle="Твой портал в мир ужасов"
+                >
                     <p className="section-kicker horror-kicker">Подборка направлений</p>
                     <h1 className="horror-glow-title horror-section-title">Добро пожаловать в бездну</h1>
                 </section>
 
-                <div className="main-discription">
-                    <p className="horror-body-text horror-lead-text">
-                        Хоррор-Хаб - это место, где собраны самые жуткие мифы, реальные
-                        криминальные истории и обзоры хоррор-игр от легендарного
-                        Куплинова.
-                    </p>
-                </div>
+                <section
+                    className="mainpage-directions"
+                    data-dynamic-header-section="true"
+                    data-title="ПОДБОРКА НАПРАВЛЕНИЙ"
+                    data-subtitle="Мифы, тру крайм и хоррор-игры в одном пространстве"
+                >
+                    <div className="main-discription">
+                        <p className="horror-body-text horror-lead-text">
+                            Хоррор-Хаб - это место, где собраны самые жуткие мифы, реальные
+                            криминальные истории и обзоры хоррор-игр от легендарного
+                            Куплинова.
+                        </p>
+                    </div>
 
-                <div className="info-cards">
-                    {sections.map((section) => (
-                        <Link to={section.to} className="info-card" key={section.to}>
-                            <div className="image-card">
-                                <img src={section.image} alt={section.alt} />
-                            </div>
-                            <div className="info-card-copy">
-                                <h2 className="horror-panel-title horror-card-title">{section.title}</h2>
-                                <p className="horror-body-text">{section.description}</p>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
+                    <div className="info-cards">
+                        {sections.map((section) => (
+                            <Link to={section.to} className="info-card" key={section.to}>
+                                <div className="image-card">
+                                    <img src={section.image} alt={section.alt} />
+                                </div>
+                                <div className="info-card-copy">
+                                    <h2 className="horror-panel-title horror-card-title">{section.title}</h2>
+                                    <p className="horror-body-text">{section.description}</p>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </section>
 
-                <section className="discription-section">
+                <section
+                    className="discription-section"
+                    data-dynamic-header-section="true"
+                    data-title="ПОЧЕМУ ХОРРОР?"
+                >
                     <p className="section-kicker horror-kicker">Почему это работает</p>
                     <h2 className="horror-glow-title horror-section-title">Почему хоррор?</h2>
 

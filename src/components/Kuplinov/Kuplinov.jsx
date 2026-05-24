@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import "./Kuplinov.scss";
 import {
     funnyMoments,
@@ -8,10 +10,20 @@ import {
 } from "./kuplinov.data";
 
 const Kuplinov = () => {
+    useEffect(() => {
+        window.dispatchEvent(new Event("horrorhub:kuplinov-sections-ready"));
+    }, []);
+
     return (
         <main className="kuplinov-page">
             <div className="kuplinov-page__content">
-                <section className="kuplinov-hero" aria-labelledby="kuplinov-hero-title">
+                <section
+                    className="kuplinov-hero"
+                    aria-labelledby="kuplinov-hero-title"
+                    data-dynamic-header-section="true"
+                    data-title={kuplinovHero.title}
+                    data-subtitle={kuplinovHero.subtitle}
+                >
                     <img
                         className="kuplinov-hero__media"
                         src={kuplinovHero.image}
@@ -33,7 +45,12 @@ const Kuplinov = () => {
                     </div>
                 </section>
 
-                <section className="kuplinov-profile" aria-labelledby="kuplinov-profile-title">
+                <section
+                    className="kuplinov-profile"
+                    aria-labelledby="kuplinov-profile-title"
+                    data-dynamic-header-section="true"
+                    data-title={kuplinovProfile.name.toUpperCase()}
+                >
                     <div className="kuplinov-profile__card">
                         <img
                             className="kuplinov-profile__avatar"
@@ -72,6 +89,9 @@ const Kuplinov = () => {
                 <section
                     className="kuplinov-walkthroughs"
                     aria-labelledby="kuplinov-walkthroughs-title"
+                    data-dynamic-header-section="true"
+                    data-title={walkthroughs.title.toUpperCase()}
+                    data-subtitle={walkthroughs.subtitle}
                 >
                     <header className="kuplinov-section-header">
                         <h2
@@ -87,7 +107,14 @@ const Kuplinov = () => {
 
                     <div className="kuplinov-walkthroughs__grid">
                         {walkthroughs.items.map((item) => (
-                            <article className="kuplinov-game-card" key={item.title}>
+                            <a
+                                className="kuplinov-game-card"
+                                key={item.title}
+                                href={item.playlistUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label={`Открыть плейлист ${item.title}`}
+                            >
                                 <img
                                     className="kuplinov-game-card__media"
                                     src={item.image}
@@ -96,12 +123,18 @@ const Kuplinov = () => {
                                 />
                                 <div className="kuplinov-game-card__overlay" />
                                 <h3 className="kuplinov-game-card__title">{item.title}</h3>
-                            </article>
+                            </a>
                         ))}
                     </div>
                 </section>
 
-                <section className="kuplinov-moments" aria-labelledby="kuplinov-moments-title">
+                <section
+                    className="kuplinov-moments"
+                    aria-labelledby="kuplinov-moments-title"
+                    data-dynamic-header-section="true"
+                    data-title={funnyMoments.title.toUpperCase()}
+                    data-subtitle="Специальные подборки лучших и самых смешных моментов из прохождений хоррор-игр"
+                >
                     <header className="kuplinov-section-header">
                         <h2
                             id="kuplinov-moments-title"
@@ -135,7 +168,12 @@ const Kuplinov = () => {
                     </div>
                 </section>
 
-                <section className="kuplinov-legend" aria-labelledby="kuplinov-legend-title">
+                <section
+                    className="kuplinov-legend"
+                    aria-labelledby="kuplinov-legend-title"
+                    data-dynamic-header-section="true"
+                    data-title={legendSection.title.toUpperCase()}
+                >
                     <header className="kuplinov-section-header">
                         <h2
                             id="kuplinov-legend-title"

@@ -9,21 +9,6 @@
     padding: 0 1rem 4.5rem;
 }
 
-.kuplinov-placeholder {
-    width: min(100%, 16rem);
-    color: rgba(255, 255, 255, 0.44);
-    font-family: var(--horror-font-ui);
-    font-size: 0.9rem;
-    font-weight: 600;
-    line-height: 1.35;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.kuplinov-placeholder--hero {
-    width: min(100%, 20rem);
-}
-
 .kuplinov-hero {
     position: relative;
     display: flex;
@@ -193,9 +178,11 @@
 
 .kuplinov-game-card {
     position: relative;
+    display: block;
     min-height: 9.4rem;
     overflow: hidden;
     background: #121212;
+    text-decoration: none;
 }
 
 .kuplinov-game-card__media,
@@ -219,6 +206,11 @@
 .kuplinov-game-card:hover .kuplinov-game-card__media {
     transform: scale(1.04);
     filter: brightness(0.6) contrast(1.08);
+}
+
+.kuplinov-game-card:hover .kuplinov-game-card__title,
+.kuplinov-game-card:focus-visible .kuplinov-game-card__title {
+    color: var(--horror-accent);
 }
 
 .kuplinov-game-card__title {

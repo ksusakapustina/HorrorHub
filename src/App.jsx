@@ -10,10 +10,10 @@ import './normalize.css'
 import './App.css';
 
 function App() {
-  return ( 
+  return (
       <Router>
         <div className='app'>
-          <Header />          
+          <Header />
           <Routes>
             <Route path='/' element={<MainPage />} />
             <Route path='/main_page' element={<MainPage />} />
@@ -22,7 +22,7 @@ function App() {
             <Route path='/kuplinov' element={<Kuplinov />} />
           </Routes>
           <Footer />
-        </div>            
+        </div>
       </Router>
   )
 }
