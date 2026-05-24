@@ -63,7 +63,11 @@
     transition: color 0.2s ease, text-shadow 0.2s ease;
 
     &:hover,
-    &:focus-visible,
+    &:focus-visible {
+        color: var(--horror-accent);
+        text-shadow: 0 0 10px rgba(211, 17, 23, 0.35);
+    }
+
     &.is-active {
         color: #ffffff;
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.28);
