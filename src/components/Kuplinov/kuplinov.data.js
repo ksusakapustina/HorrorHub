@@ -38,18 +38,60 @@ export const walkthroughs = {
     title: "Культовые прохождения",
     subtitle: "Самые запоминающиеся хоррор-игры на канале",
     items: [
-        { title: "OUTLAST", image: walkthroughOutlastImage },
-        { title: "RESIDENT EVIL 4", image: walkthroughResidentEvil4Image },
-        { title: "THE LAST\nOF US", image: walkthroughTheLastOfUsImage },
-        { title: "SILENT HILL 2", image: walkthroughSilentHill2Image },
-        { title: "CRY OF FEAR", image: walkthroughCryOfFearImage },
-        { title: "ХОРРОР-КАРТЫ\nВ GARRY'S MOD", image: walkthroughGarrysModImage },
-        { title: "SOMA", image: walkthroughSomaImage },
+        {
+            title: "OUTLAST",
+            image: walkthroughOutlastImage,
+            playlistUrl:
+                "https://youtube.com/playlist?list=PLejGw9J2xE9W6PjlJBcmcLTT9_1jf3LMl&si=WHGfcMj7vhufStP-",
+        },
+        {
+            title: "RESIDENT EVIL 4",
+            image: walkthroughResidentEvil4Image,
+            playlistUrl:
+                "https://youtube.com/playlist?list=PLejGw9J2xE9VvidYh8HR5Ix0aSCIKEAp3&si=fjryWP8BOPm9jBax",
+        },
+        {
+            title: "THE LAST\nOF US",
+            image: walkthroughTheLastOfUsImage,
+            playlistUrl:
+                "https://youtube.com/playlist?list=PLejGw9J2xE9XY6u4667COE2EcEdZEb5RR&si=jCVM_7bvp0DWpg9g",
+        },
+        {
+            title: "SILENT HILL 2",
+            image: walkthroughSilentHill2Image,
+            playlistUrl:
+                "https://youtube.com/playlist?list=PLejGw9J2xE9UUToRzUyYNYqrjQrgq9PIa&si=6wvg-W_aitKTpcQ8",
+        },
+        {
+            title: "CRY OF FEAR",
+            image: walkthroughCryOfFearImage,
+            playlistUrl:
+                "https://youtube.com/playlist?list=PLejGw9J2xE9Va8yiG1LRXu-W6Rgh_jUKr&si=GGYallY2FKzs1JZQ",
+        },
+        {
+            title: "ХОРРОР-КАРТЫ\nВ GARRY'S MOD",
+            image: walkthroughGarrysModImage,
+            playlistUrl:
+                "https://youtube.com/playlist?list=PLplb-qF7zEgKoklF81DRJMZArXvjBjCiz&si=NoVaxqryF59siOsT",
+        },
+        {
+            title: "SOMA",
+            image: walkthroughSomaImage,
+            playlistUrl:
+                "https://youtube.com/playlist?list=PLejGw9J2xE9UvmfO5wLakq3pr9Znoyijk&si=hEHxT1hI9A3oJyqN",
+        },
         {
             title: "RESIDENT EVIL 8:\nVILLAGE",
             image: walkthroughResidentEvil8VillageImage,
+            playlistUrl:
+                "https://youtube.com/playlist?list=PLejGw9J2xE9Xqq2ptRCWx-ssxMFhIqB_Q&si=X3zmk8Iqb1iU7MVQ",
         },
-        { title: "TINY BUNNY", image: walkthroughTinyBunnyImage },
+        {
+            title: "TINY BUNNY",
+            image: walkthroughTinyBunnyImage,
+            playlistUrl:
+                "https://youtube.com/playlist?list=PLejGw9J2xE9UrGNtl8YycbNM_gkI7uTIy&si=PpuFbwmxtfzTBrem",
+        },
     ],
 };
 
