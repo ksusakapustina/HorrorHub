@@ -1,3 +1,386 @@
-p {
-    color: whitesmoke;
+.kuplinov-page {
+    width: 100%;
+    background: var(--horror-bg);
+}
+
+.kuplinov-page__content {
+    width: min(100%, 92rem);
+    margin: 0 auto;
+    padding: 0 1rem 4.5rem;
+}
+
+.kuplinov-placeholder {
+    width: min(100%, 16rem);
+    color: rgba(255, 255, 255, 0.44);
+    font-family: var(--horror-font-ui);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.kuplinov-placeholder--hero {
+    width: min(100%, 20rem);
+}
+
+.kuplinov-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 22rem;
+    border-bottom: 1px solid var(--horror-accent);
+    background: #050505;
+}
+
+.kuplinov-hero__media,
+.kuplinov-hero__overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.kuplinov-hero__media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.kuplinov-hero__overlay {
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.72)),
+        rgba(0, 0, 0, 0.35);
+}
+
+.kuplinov-hero__content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    width: min(100%, 44rem);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.kuplinov-hero__title {
+    --horror-glow-title-size: clamp(2.8rem, 6vw, 4rem);
+    letter-spacing: 0.14em;
+}
+
+.kuplinov-hero__subtitle {
+    max-width: 32rem;
+    color: rgba(183, 183, 183, 0.94);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.35;
+    letter-spacing: 0.08em;
+    text-align: center;
+    white-space: pre-line;
+}
+
+.kuplinov-profile,
+.kuplinov-walkthroughs,
+.kuplinov-moments,
+.kuplinov-legend {
+    background: var(--horror-bg);
+}
+
+.kuplinov-profile {
+    padding: 4rem 0 3rem;
+}
+
+.kuplinov-profile__card {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    max-width: 85rem;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    background: #121212;
+}
+
+.kuplinov-profile__avatar {
+    width: 11.25rem;
+    height: 11.25rem;
+    margin: 0 auto;
+    border: 2px solid #ff0000;
+    border-radius: 50%;
+    box-shadow: 0 0 18px rgba(255, 0, 0, 0.55);
+    object-fit: cover;
+}
+
+.kuplinov-profile__body {
+    display: grid;
+    gap: 1rem;
+}
+
+.kuplinov-profile__eyebrow {
+    font-size: clamp(1rem, 1.8vw, 1.35rem);
+    letter-spacing: 0.08em;
+}
+
+.kuplinov-profile__name {
+    --horror-panel-title-size: clamp(1.7rem, 2vw, 2rem);
+}
+
+.kuplinov-profile__description {
+    max-width: 53rem;
+    color: #b7b7b7;
+    font-size: clamp(1rem, 1.8vw, 1.375rem);
+    line-height: 1.45;
+}
+
+.kuplinov-stats {
+    display: grid;
+    gap: 1.4rem;
+    margin-top: 1rem;
+}
+
+.kuplinov-stat__value {
+    color: #ff0000;
+    font-family: var(--horror-font-display);
+    font-size: clamp(2rem, 3vw, 2.625rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.08em;
+}
+
+.kuplinov-stat__label {
+    margin-top: 0.45rem;
+    color: #b7b7b7;
+    font-size: clamp(0.95rem, 1.3vw, 1.125rem);
+    letter-spacing: 0.04em;
+}
+
+.kuplinov-walkthroughs {
+    padding: 2rem 0 4rem;
+}
+
+.kuplinov-section-header {
+    display: grid;
+    justify-items: center;
+    gap: 1.1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.kuplinov-section-header .horror-section-title {
+    --horror-glow-title-size: clamp(2.2rem, 5vw, 3.25rem);
+    letter-spacing: 0.1em;
+}
+
+.kuplinov-section-subtitle {
+    max-width: 48rem;
+    color: #9f9f9f;
+    font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+    line-height: 1.45;
+    text-align: center;
+    white-space: pre-line;
+}
+
+.kuplinov-section-subtitle--wide {
+    max-width: 56rem;
+}
+
+.kuplinov-walkthroughs__grid {
+    max-width: 70rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.kuplinov-game-card {
+    position: relative;
+    min-height: 9.4rem;
+    overflow: hidden;
+    background: #121212;
+}
+
+.kuplinov-game-card__media,
+.kuplinov-game-card__overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.kuplinov-game-card__media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.45) contrast(1.05);
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.kuplinov-game-card__overlay {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.kuplinov-game-card:hover .kuplinov-game-card__media {
+    transform: scale(1.04);
+    filter: brightness(0.6) contrast(1.08);
+}
+
+.kuplinov-game-card__title {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0;
+    color: #ffffff;
+    font-family: var(--horror-font-display);
+    font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: pre-line;
+    text-shadow:
+        0 0 5px rgba(255, 0, 0, 1),
+        0 0 12px rgba(255, 0, 0, 0.6);
+}
+
+.kuplinov-moments {
+    padding: 1rem 0 4.5rem;
+}
+
+.kuplinov-moments__grid {
+    max-width: 70rem;
+    margin: 3.5rem auto 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.kuplinov-moment-card {
+    display: grid;
+    overflow: hidden;
+    background: #121212;
+    text-decoration: none;
+}
+
+.kuplinov-moment-card__media {
+    width: 100%;
+    min-height: 13rem;
+    object-fit: cover;
+    filter: brightness(0.78);
+}
+
+.kuplinov-moment-card__title {
+    padding: 1.5rem 1.35rem 1.75rem;
+    margin: 0;
+    color: #ffffff;
+    font-family: var(--horror-font-ui);
+    font-size: clamp(1.2rem, 2vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    text-decoration: underline;
+    text-underline-offset: 0.32rem;
+    transition: color 0.2s ease;
+}
+
+.kuplinov-moment-card:hover .kuplinov-moment-card__title,
+.kuplinov-moment-card:focus-visible .kuplinov-moment-card__title {
+    color: var(--horror-accent);
+}
+
+.kuplinov-legend {
+    padding: 0 0 2rem;
+}
+
+.kuplinov-legend__grid {
+    max-width: 85rem;
+    margin: 0 auto 2.25rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.kuplinov-legend-card {
+    display: grid;
+    gap: 0.9rem;
+    min-height: 14rem;
+    padding: 1.35rem 1.1rem 1.5rem;
+    background: #121212;
+}
+
+.kuplinov-quote {
+    max-width: 85rem;
+    margin: 0 auto;
+    padding-left: 0.95rem;
+    border-left: 0.85rem solid var(--horror-accent);
+}
+
+.kuplinov-quote p {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .kuplinov-page__content {
+        padding: 0 1.5rem 5rem;
+    }
+
+    .kuplinov-hero {
+        min-height: 26.25rem;
+    }
+
+    .kuplinov-profile__card {
+        grid-template-columns: 11.25rem 1fr;
+        gap: 2.5rem;
+        padding: 3rem;
+    }
+
+    .kuplinov-profile__avatar {
+        margin: 0;
+    }
+
+    .kuplinov-stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+    .kuplinov-walkthroughs__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.125rem;
+    }
+
+    .kuplinov-moments__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .kuplinov-hero {
+        min-height: 32rem;
+    }
+
+    .kuplinov-walkthroughs__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .kuplinov-legend__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .kuplinov-hero__title {
+        letter-spacing: 0.08em;
+    }
+
+    .kuplinov-quote {
+        border-left-width: 0.45rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .kuplinov-page__content {
+        padding-inline: 3.6rem;
+    }
 }
