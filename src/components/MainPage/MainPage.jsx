@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import mythsImg from "../../assets/images/myths.jpg";
 import trueCrimeImg from "../../assets/images/truecrime.jpg";
@@ -34,29 +33,28 @@ const sections = [
 ];
 
 const MainPage = () => {
-    useEffect(() => {
-        window.dispatchEvent(new Event("horrorhub:dynamic-sections-ready"));
-    }, []);
-
     return (
-        <main>
-            <div className="mainpage">
-                <section
-                    className="mainpage-intro"
-                    data-dynamic-header-section="true"
-                    data-title="ДОБРО ПОЖАЛОВАТЬ В БЕЗДНУ"
-                    data-subtitle="Твой портал в мир ужасов"
-                >
-                    <p className="section-kicker horror-kicker">Подборка направлений</p>
-                    <h1 className="horror-glow-title horror-section-title">Добро пожаловать в бездну</h1>
-                </section>
+        <main className="mainpage">
+            <section className="mainpage-hero" aria-labelledby="mainpage-hero-title">
+                <div className="mainpage-hero__content">
+                    <h1 id="mainpage-hero-title" className="horror-glow-title horror-logo-title">
+                        ХОРРОР-ХАБ
+                    </h1>
+                    <p className="horror-body-text mainpage-hero__subtitle">
+                        Твой портал в мир ужасов
+                    </p>
+                </div>
+            </section>
 
-                <section
-                    className="mainpage-directions"
-                    data-dynamic-header-section="true"
-                    data-title="ПОДБОРКА НАПРАВЛЕНИЙ"
-                    data-subtitle="Мифы, тру крайм и хоррор-игры в одном пространстве"
-                >
+            <div className="mainpage-content">
+                <section className="mainpage-directions">
+                    <div className="mainpage-section-heading">
+                        <p className="section-kicker horror-kicker">Подборка направлений</p>
+                        <h2 className="horror-glow-title horror-section-title">
+                            Добро пожаловать в бездну
+                        </h2>
+                    </div>
+
                     <div className="main-discription">
                         <p className="horror-body-text horror-lead-text">
                             Хоррор-Хаб - это место, где собраны самые жуткие мифы, реальные
@@ -80,11 +78,7 @@ const MainPage = () => {
                     </div>
                 </section>
 
-                <section
-                    className="discription-section"
-                    data-dynamic-header-section="true"
-                    data-title="ПОЧЕМУ ХОРРОР?"
-                >
+                <section className="discription-section">
                     <p className="section-kicker horror-kicker">Почему это работает</p>
                     <h2 className="horror-glow-title horror-section-title">Почему хоррор?</h2>
 
