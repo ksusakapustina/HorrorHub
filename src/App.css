@@ -1,4 +1,5 @@
 .app {
+    --app-header-offset: 4.75rem;
     --horror-bg: #000000;
     --horror-surface: #151515;
     --horror-accent: #d31117;
@@ -121,6 +122,12 @@ main {
     font-weight: 600;
     line-height: 1.7;
     text-align: left;
+}
+
+@media (max-width: 639px) {
+    .app {
+        --app-header-offset: 6.6rem;
+    }
 }
 
 @media (min-width: 768px) {

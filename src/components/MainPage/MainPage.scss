@@ -1,11 +1,43 @@
 .mainpage {
-    width: min(100%, 92rem);
-    margin: 0 auto;
-    padding: 3.8rem 1rem 0;
+    width: 100%;
     background: var(--horror-bg);
 }
 
-.mainpage-intro {
+.mainpage-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(22rem, 42vw, 32.5rem);
+    padding: 2rem 1rem;
+    border-bottom: 1px solid var(--horror-accent);
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.45)),
+        url("../../assets/images/HeaderScroll.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.mainpage-hero__content {
+    display: grid;
+    justify-items: center;
+    gap: 0.45rem;
+    text-align: center;
+}
+
+.mainpage-hero__subtitle {
+    --horror-body-text-size: clamp(1rem, 2.4vw, 1.95rem);
+    color: rgba(218, 218, 218, 0.92);
+    line-height: 1.2;
+}
+
+.mainpage-content {
+    width: min(100%, 92rem);
+    margin: 0 auto;
+    padding: 3.8rem 1rem 0;
+}
+
+.mainpage-section-heading {
     display: grid;
     justify-items: center;
     gap: 1rem;
@@ -14,7 +46,7 @@
 }
 
 .section-kicker {
-    display: none;
+    display: block;
 }
 
 .main-discription {
@@ -88,7 +120,7 @@
 }
 
 @media (min-width: 700px) {
-    .mainpage {
+    .mainpage-content {
         padding: 4.3rem 1.5rem 0;
     }
 
@@ -114,8 +146,9 @@
 }
 
 @media (max-width: 699px) {
-    .mainpage {
-        padding-top: 3rem;
+    .mainpage-hero {
+        min-height: 19rem;
+        padding-inline: 1.25rem;
     }
 
     .main-discription {
@@ -137,7 +170,7 @@
 }
 
 @media (min-width: 1280px) {
-    .mainpage {
+    .mainpage-content {
         padding-inline: 3.6rem;
     }
 }
