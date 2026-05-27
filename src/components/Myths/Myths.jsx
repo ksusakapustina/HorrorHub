@@ -1,17 +1,42 @@
+import { useEffect } from "react";
+import { mythsHead, Ctulhu} from "./Myths.data";
+
 import "./Myths.scss";
 
 const Myths = () => {
+    useEffect(() => { window.dispatchEvent(new Event("horrorhub:dynamic-sections-ready")); }, []);
+
     return (
-        <main className="content-page myths-page">
-            <section className="content-page__inner">
-                <p className="content-page__kicker horror-kicker">Раздел в разработке</p>
-                <h1 className="content-page__title horror-glow-title">Мифы и легенды</h1>
-                <p className="content-page__text horror-body-text">
-                    Здесь будет отдельная подборка городских легенд, забытых сюжетов
-                    и хоррор-историй. Пока страница нужна как адаптивный каркас
-                    раздела и точка навигации внутри SPA.
-                </p>
-            </section>
+        <main className="myths-page">
+            <div className="myths-page-content">
+                <section 
+                className="myths-head"
+                aria-labelledby="myths-title"
+                data-dynamic-header-section="true"
+                data-title={mythsHead.title}
+                data-subtitle={mythsHead.subtitle}
+            >
+                <img
+                    className="myths-head-image"
+                    src={mythsHead.image}
+                    alt=""
+                    aria-hidden="true"
+                />
+                <div className="myths-head-overlay" />
+                <div className="myths-head-content">
+                    <h1
+                        id="myths-head-title"
+                        className="horror-glow-title horror-section-title myths-head-title"
+                    >
+                        {mythsHead.title}
+                    </h1>
+                    <p className="horror-body-text myths-head-subtitle">
+                        {mythsHead.subtitle}
+                    </p>
+                </div>               
+                </section>
+            </div>
+
         </main>
     );
 };
