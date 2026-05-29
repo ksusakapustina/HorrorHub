@@ -1,14 +1,14 @@
-import "./Myths.scss";
+import "./Ctulhu.scss";
 
-const Myths = () => {
+const CtulhuMore = () => {
     return (
         <main className="content-page myths-page">
             <section className="content-page__inner">
                 <p className="content-page__kicker horror-kicker">Раздел в разработке</p>
-                <h1 className="content-page__title horror-glow-title">Мифы и легенды</h1>
+                <h1 className="content-page__title horror-glow-title">МИФЫ КТУЛХУ</h1>
                 <p className="content-page__text horror-body-text">
-                    Здесь будет отдельная подборка городских легенд, забытых сюжетов
-                    и хоррор-историй. Пока страница нужна как адаптивный каркас
+                    Здесь будет расширенная информация о мифологии Лавкрафта.
+                    <br />Пока страница нужна как адаптивный каркас
                     раздела и точка навигации внутри SPA.
                 </p>
             </section>
@@ -16,4 +16,4 @@ const Myths = () => {
     );
 };
 
-export default Myths;
+export default CtulhuMore;
