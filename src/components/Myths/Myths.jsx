@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { mythsHead, Ctulhu, litfilms, worldmyths } from "./Myths.data";
 
 import "./Myths.scss";
@@ -36,33 +37,38 @@ const Myths = () => {
                     </div>               
                 </section>
 
-                <section
-                    className="ctulhu"
-                    aria-labelledby="ctulhu-title"
-                    data-dynamic-header-section="true"
-                    data-title={Ctulhu.title.toUpperCase()}
+                <Link
+                    to="/myths/cthulhu"
+                    className="ctulhu-link"
                 >
-                    <div className="ctulhu-inner">
-                        <img
-                            className="ctulhu-image"
-                            src={Ctulhu.image}
-                            alt={Ctulhu.imageAlt}
-                        />
-                        <article className="ctulhu-card">
-                            <p className="horror-kicker">{Ctulhu.eyebrow}</p>
-                            <h2
-                                id="ctulhu-title"
-                                className="horror-panel-title ctulhu_title"
-                            >
-                                {Ctulhu.title}
-                            </h2>
-                            <p className="horror-body-text ctulhu-text">
-                                {Ctulhu.text}
-                            </p>
-                        </article>
-                    </div>
-                </section>
-
+                    <section
+                        className="ctulhu"
+                        aria-labelledby="ctulhu-title"
+                        data-dynamic-header-section="true"
+                        data-title={Ctulhu.title.toUpperCase()}
+                    >
+                        <div className="ctulhu-inner">
+                            <img
+                                className="ctulhu-image"
+                                src={Ctulhu.image}
+                                alt={Ctulhu.imageAlt}
+                            />
+                            <article className="ctulhu-card">
+                                <p className="horror-kicker">{Ctulhu.eyebrow}</p>
+                                <h2
+                                    id="ctulhu-title"
+                                    className="horror-panel-title ctulhu_title"
+                                >
+                                    {Ctulhu.title}
+                                </h2>
+                                <p className="horror-body-text ctulhu-text">
+                                    {Ctulhu.text}
+                                </p>
+                            </article>
+                        </div>
+                    </section>
+                </Link>
+                
                 <section
                     className="litfilms"
                     aria-labelledby="litfilms-title"
@@ -79,21 +85,27 @@ const Myths = () => {
                     </div>
                     <div className="litfilms-grid">
                         {litfilms.map((item) => (
-                            <article className="litfilms-card" key={item.title}>
-                                <img
-                                    className="litfilms-card-image"
-                                    src={item.image}
-                                    alt={item.imageAlt}
-                                />
-                                <div className="litfilms-card-content">
-                                    <h3 className="horror-panel-title litfilms-card-title">
-                                        {item.title}
-                                    </h3>
-                                    <p className="horror-body-text litfilms-card-text">
-                                        {item.description}
-                                    </p>
-                                </div>
-                            </article>
+                            <Link 
+                                to={`/myths/${item.slug}`}
+                                key={item.id}
+                                className="litfilms-card-link"
+                            >
+                                <article className="litfilms-card" key={item.title}>
+                                    <img
+                                        className="litfilms-card-image"
+                                        src={item.image}
+                                        alt={item.imageAlt}
+                                    />
+                                    <div className="litfilms-card-content">
+                                        <h3 className="horror-panel-title litfilms-card-title">
+                                            {item.title}
+                                        </h3>
+                                        <p className="horror-body-text litfilms-card-text">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                </article> 
+                            </Link>
                         ))}
                     </div>
                 </section>
